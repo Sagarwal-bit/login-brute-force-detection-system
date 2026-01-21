@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const connectDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes");
+const logRoutes = require("./src/routes/logRoutes");
 
 const app = express();
 
@@ -20,6 +21,7 @@ connectDB();
 
 // routes
 app.use("/api/auth", authRoutes);
+app.use("/api/logs", logRoutes);
 
 // base route
 app.get("/", (req, res) => res.send("Brute Force Detection API Running"));
